@@ -7,6 +7,7 @@ import MainPage from './Components/MainPage';
 import Signin from './Components/Singin';
 import Signup from './Components/Signup';
 import AboutUs from './Components/AboutUs';
+import FoodItems from './Components/FoodItems';
 
 function App() {
 
@@ -17,7 +18,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<MainPage />}></Route>
-          <Route path="Signin" element={<Signin />} />
+          <Route path="/Fooditems" element={<FoodItems/>} />
           <Route path="/Signup" element={<Signup />} />
           <Route path="/About" element={<AboutUs />} />
       </Routes>
