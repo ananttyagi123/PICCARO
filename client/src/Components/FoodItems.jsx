@@ -1,16 +1,15 @@
 import React from "react";
 import { Burger, Fries, Pizza, Pasta } from "./FoodList";
-
-
+import Navigation from "../Components/Navigation";
 
 const FoodItems = () => {
   return (<>
-    <div className="">
-      <Pizza></Pizza>
-      <Pasta></Pasta>
-      <Fries></Fries>
-      <Burger></Burger>
-    </div>
+    <Navigation></Navigation>
+    <Pizza></Pizza>
+    <Pasta></Pasta>
+    <Fries></Fries>
+    <Burger></Burger>
+
 
   </>)
 }
