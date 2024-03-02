@@ -8,6 +8,8 @@ import Signin from './Components/Singin';
 import Signup from './Components/Signup';
 import AboutUs from './Components/AboutUs';
 import FoodItems from './Components/FoodItems';
+import Buy from './Components/Buy';
+
 
 function App() {
 
@@ -18,11 +20,13 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<MainPage />}></Route>
-          <Route path="/Fooditems" element={<FoodItems/>} />
+          <Route path="/Fooditems" element={<FoodItems />} />
+          <Route path="/Signin" element={<Signin />} />
           <Route path="/Signup" element={<Signup />} />
           <Route path="/About" element={<AboutUs />} />
-      </Routes>
-    </BrowserRouter >
+          <Route path="/buy" element={<Buy/>}></Route>
+        </Routes>
+      </BrowserRouter >
     </>
   )
 }

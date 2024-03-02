@@ -1,4 +1,9 @@
-import React from "react";
+
+import { ReactDOM, useState } from "react";
+import { TiTick } from "react-icons/ti";
+
+
+import { Link } from "react-router-dom";
 import p1 from '../Components/Image/p1.jpeg'
 import p2 from '../Components/Image/p2.jpeg'
 import p3 from '../Components/Image/p3.jpeg'
@@ -56,23 +61,34 @@ const pasta = [
   { src: pa2, heading: "Cream & Onion", description: "" },
   { src: pa3, heading: "Pesto pasta", description: "" },
   { src: pa4, heading: "White Sauce", description: "" },
-  { src: pa5, heading: "Roasted Bell pepper Pasta", description: "" }
+  { src: pa5, heading: "Roasted Bell pepper ", description: "" }
 ];
 
 
 
 
+
+
 export const Pizza = () => {
+  const [add, postAdd] = useState('ADD');
+  const addEvent = (e) => {
+
+
+    postAdd(<TiTick />);
+  }
   return (
     <>
       <center style={{ fontFamily: 'Permanent Marker' }} className="text-3xl mt-5 pt-5">Pizzas</center>
       <div className="hover:h-90  w-auto flex flex-row  justify-center ">
         {pizza.map((item, index) => (
-          <div className="group hover:bg-black  hover:m-3 hover:rounded-lg shadow-none hover:shadow hover:shadow-xl">
-            <img key={index} src={item.src} height="100px" width="250px" className="rounded-lg shadow-2xl shadow-black hover:shadow-white  bg-white  border-3 m-3  gap gap-4  border-2 border-stone-900 bg-stone-900 transition-transform duration-300 transform hover:scale-90 hover: hover:pb-5 pacity-90" style={{}} alt={`Pizza ${index + 1}`} />
+          <div className="group hover:bg-black  hover:m-3 hover:rounded-lg shadow-none hover:shadow hover:shadow-xl transition-transform duration-700 ">
+            <img key={index} src={item.src} className="size-48 rounded-lg shadow-2xl shadow-black hover:shadow-white  bg-white  border-3 m-3  gap gap-4  border-2 border-stone-900 bg-stone-900 transition-transform duration-300 transform hover:scale-90 opacity-90" style={{}} alt={`Pizza ${index + 1}`} />
             <div class="pizza-info justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300  text-white">
-              <h2 className="p-2  m-3 justify-center uppercase ext-white text-center text-center">{item.heading}</h2>
-              <button className="bg-white text-red-800 border-2xl rounded-lg p-1 flex justify-center mx-auto m-4 hover:bg-green-600 hover:text-white hover:border hover:border-white hover:border-2xl">Buy Now</button>
+              <h2 className="p-2  m-3 justify-center uppercase text-white text-center text-center">{item.heading}</h2>
+              <div className="flex flex-row p-2">
+                <button className="bg-white text-black bg-green-500 uppercase border-2xl rounded-lg p-2 flex justify-center mx-auto m-2 hover:bg-green-600 hover:text-white hover:border hover:border-white">Buy Now</button>
+                <button id={index} onClick={addEvent} className="bg-white text-black bg-red-500 hover:opacity-1 border-2xl rounded-lg p-2  flex justify-center mx-auto m-2 hover:bg-red-600 hover:text-white hover:border hover:border-white">{add}</button>
+              </div>
             </div>
 
 
@@ -96,10 +112,13 @@ export const Burger = () => {
       <div className="hover:h-90  w-auto flex flex-row  justify-center ">
         {burger.map((item, index) => (
           <div className="group hover:bg-black  hover:m-3 hover:rounded-lg shadow-none hover:shadow hover:shadow-xl">
-            <img key={index} src={item.src} height="100px" width="250px" className="rounded-lg shadow-2xl shadow-black hover:shadow-white  bg-white  border-3 m-3  gap gap-4  border-2 border-stone-900 bg-stone-900 transition-transform duration-300 transform hover:scale-90 hover: hover:pb-5 pacity-90" style={{}} alt={`Pizza ${index + 1}`} />
+            <img key={index} src={item.src} className=" size-48 rounded-lg shadow-2xl shadow-black hover:shadow-white  bg-white  border-3 m-3  gap gap-4  border-2 border-stone-900 bg-stone-900 transition-transform duration-300 transform hover:scale-90  pacity-90" style={{}} alt={`Pizza ${index + 1}`} />
             <div class="pizza-info justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white">
               <h2 className="p-2  m-3 justify-center uppercase ext-white text-center">{item.heading}</h2>
-              <button className="bg-white text-red-800 border-2xl rounded-lg p-1 flex justify-center mx-auto m-2 text-cente hover:bg-green-600 hover:text-white hover:border hover:border-whiter">Buy Now</button>
+              <div className="flex flex-row p-2">
+                <button className="bg-white text-black bg-green-500 uppercase border-2xl rounded-lg p-2 flex justify-center mx-auto m-2 hover:bg-green-600 hover:text-white hover:border hover:border-white">Buy Now</button>
+                <button className="bg-white text-black bg-red-500 hover:opacity-1 border-2xl rounded-lg p-2  flex justify-center mx-auto m-2 hover:bg-red-600 hover:text-white hover:border hover:border-white">ADD</button>
+              </div>
             </div>
 
 
@@ -124,10 +143,13 @@ export const Fries = () => {
       <div className="hover:h-90  w-auto flex flex-row  justify-center ">
         {fries.map((item, index) => (
           <div className="group hover:bg-black  hover:m-3 hover:rounded-lg shadow-none hover:shadow-xl ">
-            <img key={index} src={item.src} height="100px" width="250px" className="rounded-lg shadow-2xl shadow-black hover:shadow-white  bg-white  border-3 m-3  gap gap-4  border-2 border-stone-900 bg-stone-900 transition-transform duration-300 transform hover:scale-90 hover: hover:pb-5 pacity-90" style={{}} alt={`Pizza ${index + 1}`} />
+            <img key={index} src={item.src} className=" size-48 rounded-lg shadow-2xl shadow-black hover:shadow-white  bg-white  border-3 m-3  gap gap-4  border-2 border-stone-900 bg-stone-900 transition-transform duration-300 transform hover:scale-90 pacity-90" style={{}} alt={`Pizza ${index + 1}`} />
             <div class="pizza-info justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white">
               <h2 className="p-2  m-3 justify-center uppercase ext-white text-center">{item.heading}</h2>
-              <button className="bg-white text-red-800 border-2xl rounded-lg p-1 flex justify-center mx-auto m-2 hover:bg-green-600 hover:text-white hover:border hover:border-white">Buy Now</button>
+              <div className="flex flex-row p-2">
+                <button className="bg-white text-black bg-green-500 uppercase border-2xl rounded-lg p-2 flex justify-center mx-auto m-2 hover:bg-green-060 hover:text-white hover:border hover:border-white">Buy Now</button>
+                <button className="bg-white text-black bg-red-500 hover:opacity-1 border-2xl rounded-lg p-2  flex justify-center mx-auto m-2 hover:bg-red-600 hover:text-white hover:border hover:border-white">ADD</button>
+              </div>
             </div>
 
 
@@ -152,13 +174,14 @@ export const Pasta = () => {
       <div className="hover:h-90  w-auto flex flex-row  justify-center ">
         {pasta.map((item, index) => (
           <div className="group hover:bg-black  hover:m-3 hover:rounded-lg shadow-none hover:shadow-2xl hover:shadow-white">
-            <img key={index} src={item.src} height="100px" width="250px" className="rounded-lg shadow-2xl shadow-black hover:shadow-white  bg-white  border-3 m-3  gap gap-4  border-2 border-stone-900 bg-stone-900 transition-transform duration-300 transform hover:scale-90 hover: hover:pb-5 pacity-90" style={{}} alt={`Pizza ${index + 1}`} />
+            <img key={index} src={item.src} className="justify-center size-48 rounded-lg shadow-2xl shadow-black hover:shadow-white  bg-white  border-3 m-3  gap gap-4  border-2 border-stone-900 bg-stone-900 transition-transform duration-300 transform hover:scale-90  opacity-90" style={{}} alt={`Pizza ${index + 1}`} />
             <div class="pizza-info justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white">
               <h2 className="p-2  m-3 justify-center uppercase ext-white text-center">{item.heading}</h2>
-              <button className="bg-white text-red-800 border-2xl rounded-lg p-1 flex justify-center mx-auto m-2 hover:bg-green-600 hover:text-white hover:border hover:border-white">Buy Now</button>
+              <div className="flex flex-row p-2">
+                <button className="bg-white text-black bg-green-500 uppercase border-2xl rounded-lg p-2 flex justify-center mx-auto m-2 hover:bg-green-00 hover:text-white hover:border hover:border-white">Buy Now</button>
+                <button className="bg-white text-black bg-red-500 hover:opacity-1 border-2xl rounded-lg p-2  flex justify-center mx-auto m-2 hover:bg-red-600 hover:text-white hover:border hover:border-white">ADD</button>
+              </div>
             </div>
-
-
           </div>
         ))
         }
