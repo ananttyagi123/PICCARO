@@ -29,17 +29,17 @@ import pa5 from '../Components/Image/pa5.jpeg'
 
 const Buy = () => {
   return (<>
-    <div className="h-96 w-auto border border-xl bg-stone-100 shadow shadow-xl mx-20 mt-10 flex flex-row ">
+    <div className="h-96 w-auto border border-xl bg-stone-100 shadow shadow-xl mx-20 mt-10 flex flex-row  rounded-lg" style={{ fontFamily: 'Oswald' }}>
       <div>
-        <img src={pa1} className="size-68 m-4 p-2 shadow shadow-xl" alt="" />
+        <img src={pa1} className="size-68 m-4 p-2 shadow shadow-xl rounded-lg" alt="" />
         <h1 className="ml-4 text-3xl font-bold "> Red Pepper Pasta</h1>
-        <h2 className="font-semibold text-2xl my-2 mx-4">Price : </h2>
+        <h2 className="font-semibold text-2xl my-2 mx-4">Price : <span className="text-blue-400">499 ₹</span></h2>
       </div>
       <div className="ml-60 mt-10" >
 
         <h1 className="font-bold pb-5">Red Pepper Pasta </h1>
 
-        <p className="font-">Prepare to be whisked away on a culinary journey unlike any other with our sensational Red pepper pasta
+        <p className="" style={{ fontFamily: 'Oswald' }}>Prepare to be whisked away on a culinary journey unlike any other with our sensational Red pepper pasta
           <br /> Picture this: tender strands of al dente pasta dancing in a velvety symphony of flavors, each mouthful bursting <br />with a harmonious blend of sun-kissed tomatoes, fragrant basil, and a hint of garlic that's downright irresistible. <br />
         </p>
 
@@ -62,31 +62,14 @@ const Buy = () => {
 
         <h2 className="p-2 mt-3 font-semibold">Serving Size:</h2>
         <span>1 person</span>
-        <div className="pt-5 flex justify-center">
-          <button className="bg-green-400 shadow shdow-black shadow-xl px-4 py-1 rounded-lg hover:shadow-black hover:shadow-lg ">Pay</button>
+        <div className="pt-5 flex justify-center ">
+          <button className="bg-green-600 shadow shdow-black shadow-lg px-4 py-1 rounded-lg hover:shadow-white hover:shadow-lg hover:border-lg hover:border-black  hover:opacity-4">Pay</button>
         </div>
+
+
       </div>
-      <div>
-        <select id="additional-items" multiple>
-          <option value="" disabled> Additional item</option>
-          <optgroup label="Shakes">
-            <option value="chocolate-shake">Chocolate Shake</option>
-            <option value="vanilla-shake">Vanilla Shake</option>
-            <option value="strawberry-shake">Strawberry Shake</option>
-          </optgroup>
-          <optgroup label="Cold Drinks">
-            <option value="coke">Coke</option>
-            <option value="pepsi">Pepsi</option>
-            <option value="sprite">Sprite</option>
-          </optgroup>
-          <optgroup label="Hot Sauce">
-            <option value="sriracha">Sriracha</option>
-            <option value="tabasco">Tabasco</option>
-            <option value="franks-red-hot">Frank's RedHot</option>
-          </optgroup>
-        </select>
-      </div>
-    </div>
+    </div >
+
 
   </>)
 }
