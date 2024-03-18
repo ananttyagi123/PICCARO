@@ -1,4 +1,5 @@
 import React from "react";
+import Navigation from './Navigation'
 import p1 from '../Components/Image/p1.jpeg'
 import p2 from '../Components/Image/p2.jpeg'
 import p3 from '../Components/Image/p3.jpeg'
@@ -29,6 +30,7 @@ import pa5 from '../Components/Image/pa5.jpeg'
 
 const Buy = () => {
   return (<>
+    <Navigation></Navigation>
     <div className="h-96 w-auto border border-xl bg-stone-100 shadow shadow-xl mx-20 mt-10 flex flex-row  rounded-lg" style={{ fontFamily: 'Oswald' }}>
       <div>
         <img src={pa1} className="size-68 m-4 p-2 shadow shadow-xl rounded-lg" alt="" />
@@ -56,17 +58,13 @@ const Buy = () => {
             <li></li>
           </ul>
         </div>
-
-
-
-
+        
         <h2 className="p-2 mt-3 font-semibold">Serving Size:</h2>
         <span>1 person</span>
         <div className="pt-5 flex justify-center ">
           <button className="bg-green-600 shadow shdow-black shadow-lg px-4 py-1 rounded-lg hover:shadow-white hover:shadow-lg hover:border-lg hover:border-black  hover:opacity-4">Pay</button>
         </div>
-
-
+        
       </div>
     </div >
 
